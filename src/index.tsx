@@ -19,7 +19,8 @@ const AppWithApollo = () => {
   const { getAccessTokenSilently, isAuthenticated } = useAuth0()
 
   const httpLink = createHttpLink({
-    uri: "http://localhost:4000"
+    //uri: "http://localhost:4000"
+    uri: process.env.REACT_APP_QRAPHQL_URI
   })
 
   const authLink = setContext(async (_, { headers }) => {
